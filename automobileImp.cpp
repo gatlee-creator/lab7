@@ -21,21 +21,22 @@ string automobileType::getInfoString() const{
     effo = to_string(efficiency);
 
       //concat those strings into a larger string
-    automobileStatus = "Miles = " + odmtr + " Fuel = " + fuelLevel + 
-                       " Efficiency = " + effo; 
+    automobileStatus = "Miles = " + odmtr + " " + 
+                       "Fuel = " + fuelLevel + " " +
+                       "Efficiency = " + effo; 
 
     return automobileStatus;
 }
 
 void automobileType::drive(float milesTrav){
     float gallonsUsed;
+
       //first do a 0 miles check
     if(milesTrav <= 0)
         return; 
     
      //do a formula to figure how many gallons we used 
      gallonsUsed = (1 / efficiency) * milesTrav; 
-     cout << gallonsUsed << endl;
 
       //if the fuel level goes below 0 then we're out of gas 
     if((fuel - gallonsUsed) <= 0)
