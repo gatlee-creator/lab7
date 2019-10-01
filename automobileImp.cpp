@@ -1,6 +1,6 @@
 #include "automobile.h"
 #include <string>
-
+#include <iostream>
 using namespace std;
 
 void automobileType::setProperties(float odmtr, float fuelLevel, float effo){
@@ -34,11 +34,11 @@ void automobileType::drive(float milesTrav){
         return; 
     
      //do a formula to figure how many gallons we used 
-    //gallonsUsed = milesTrav / efficiency; 
      gallonsUsed = (1 / efficiency) * milesTrav; 
+     cout << gallonsUsed << endl;
 
       //if the fuel level goes below 0 then we're out of gas 
-    if((fuel -= gallonsUsed) <= 0)
+    if((fuel - gallonsUsed) <= 0)
         return; 
     else
         fuel -= gallonsUsed; //subtract gallons used from our fuel
