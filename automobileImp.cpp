@@ -27,22 +27,21 @@ string automobileType::getInfoString() const{
     return automobileStatus;
 }
 
-void automobileType::drive(float miles){
+void automobileType::drive(float milesTrav){
     float gallonsUsed;
       //first do a 0 miles check
-    if(miles <= 0)
+    if(milesTrav <= 0)
         return; 
     
-     //do a formula to figure how much gas we used 
-     gallonsUsed = miles / efficiency; 
-     fuel -= gallonsUsed;
+     //do a formula to figure how many gallons we used 
+     gallonsUsed = milesTrav / efficiency; 
 
       //if the fuel level goes below 0 then we're out of gas 
-    // if(fuel -= gallonsUsed <= 0)
-    //     return; 
-    // else
-    //     fuel -= gallonsUsed; //subtract gallons used from our fuel
+    if((fuel -= gallonsUsed) <= 0)
+        return; 
+    else
+        fuel -= gallonsUsed; //subtract gallons used from our fuel
 
-    odemeter += miles; //add this vechile has traveled to the odemeter
+    odemeter += milesTrav; //add this vechile has traveled to the odemeter
  
 }
