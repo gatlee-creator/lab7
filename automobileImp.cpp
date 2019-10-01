@@ -1,6 +1,6 @@
 #include "automobile.h"
 #include <string>
-#include <iostream>
+
 using namespace std;
 
 void automobileType::setProperties(float odmtr, float fuelLevel, float effo){
@@ -14,15 +14,27 @@ void automobileType::setProperties(float odmtr, float fuelLevel, float effo){
 string automobileType::getInfoString() const{
     string automobileStatus; 
     string fuelLevel, odmtr, effo;
+    int pos; 
 
       //convert int members to strings
     odmtr = to_string(odemeter);
     fuelLevel = to_string(fuel); 
     effo = to_string(efficiency);
 
+    //now we want to modify each strings length
+    pos = odmtr.find_first_of(".");
+    odmtr = odmtr.erase(pos, odmtr.length());
+
+    pos = fuelLevel.find_first_of(".");
+    fuelLevel = fuelLevel.erase(pos + 3, fuelLevel.length()); //not using this correct
+
+    pos = effo.find_first_of(".");
+    effo = effo.erase(pos + 3, fuelLevel.length());
+    
+
       //concat those strings into a larger string
-    automobileStatus = "Miles = " + odmtr + " " + 
-                       "Fuel = " + fuelLevel + " " +
+    automobileStatus = "Miles = " + odmtr +     " " + 
+                       "Fuel = "  + fuelLevel + " " +
                        "Efficiency = " + effo; 
 
     return automobileStatus;
