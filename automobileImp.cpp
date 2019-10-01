@@ -34,7 +34,8 @@ void automobileType::drive(float milesTrav){
         return; 
     
      //do a formula to figure how many gallons we used 
-     gallonsUsed = milesTrav / efficiency; 
+    //gallonsUsed = milesTrav / efficiency; 
+     gallonsUsed = (1 / efficiency) * milesTrav; 
 
       //if the fuel level goes below 0 then we're out of gas 
     if((fuel -= gallonsUsed) <= 0)

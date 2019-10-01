@@ -7,14 +7,11 @@ using namespace std;
 
 int main()
 {
-    string update; 
 
     automobileType car1; 
 
     car1.setProperties(0, 50, 17.5);
-    update = car1.getInfoString();
-
-    cout << update << endl;
+    cout << car1.getInfoString() << endl;
 
     car1.drive(25);
     cout << car1.getInfoString() << endl;
