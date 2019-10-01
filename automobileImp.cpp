@@ -52,10 +52,21 @@ void automobileType::drive(float milesTrav){
 
       //if the fuel level goes below 0 then we're out of gas 
     if((fuel - gallonsUsed) <= 0)
-        return; 
+        fuel = 0;
     else
         fuel -= gallonsUsed; //subtract gallons used from our fuel
 
     odemeter += milesTrav; //add this vechile has traveled to the odemeter
  
+}
+
+//default constructor
+automobileType::automobileType(){
+  odemeter = 0;
+  fuel = 0;
+  efficiency = 0;
+}
+
+automobileType::automobileType(float odmtr, float fuelLevel, float effo){
+  setProperties(odmtr, fuelLevel, effo);
 }
