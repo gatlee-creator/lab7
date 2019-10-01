@@ -6,6 +6,8 @@ class automobileType{
         void setProperties(float, float, float);
         std::string getInfoString() const;
         void drive(float);
+        automobileType();
+        automobileType(float, float, float);
 
     private:
         float odemeter;
