@@ -24,7 +24,10 @@ int main()
     automobileType car2(2500, 19.2, 13.2);
 
     car2.drive(450);
-    cout << car2.getInfoString() << endl;
+    //cout << car2.getInfoString() << endl;
+
+    automobileType car3(-50, 40, 27.8);
+    cout << car3.getInfoString() << endl;
 
     return 0;
 }
