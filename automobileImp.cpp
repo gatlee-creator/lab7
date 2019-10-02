@@ -1,3 +1,7 @@
+/*
+    Implementation of the automobileType class. Contains member variables
+    and member functions for the automobileType. 
+*/
 #include "automobile.h"
 #include <string>
 
