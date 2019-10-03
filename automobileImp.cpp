@@ -7,36 +7,36 @@
 
 using namespace std;
 
-void automobileType::setProperties(float odmtr, float fuelLevel, float effo){
+void automobileType::setProperties(float odmtrToSet, float fuelToSet, float effoToSet){
     const int minThres = 0; 
       //check if all 3 are less than 0. If not then we set them to param value 
-    odmtr < minThres ? odemeter=0 : odemeter=odmtr; 
-    fuel < minThres ? fuel=0 : fuel=fuelLevel; 
-    effo < minThres ? efficiency=0 : efficiency=effo;
+    odmtrToSet < minThres ? odemeter=0 : odemeter=odmtrToSet; 
+    fuelToSet < minThres ? fuel=0 : fuel=fuelToSet; 
+    effoToSet < minThres ? efficiency=0 : efficiency=effoToSet;
 }
 
 string automobileType::getInfoString() const{
     string automobileStatus; 
-    string fuelLevel, odmtr, effo;
+    string fuelToString, odmtrToString, effoToString;
     int pos; 
 
       //convert int members to strings
-    odmtr = to_string((int)odemeter);
-    fuelLevel = to_string(fuel); 
-    effo = to_string(efficiency);
+    odmtrToString = to_string((int)odemeter);
+    fuelToString = to_string(fuel); 
+    effoToString = to_string(efficiency);
 
     //now we want to modify strings length to show 2 decimal places
-    pos = fuelLevel.find_first_of(".");
-    fuelLevel = fuelLevel.erase(pos + 3, fuelLevel.length()); //not using this correct
+    pos = fuelToString.find_first_of(".");
+    fuelToString = fuelToString.erase(pos + 3, fuelToString.length()); 
 
-    pos = effo.find_first_of(".");
-    effo = effo.erase(pos + 3, fuelLevel.length());
+    pos = effoToString.find_first_of(".");
+    effoToString = effoToString.erase(pos + 3, effoToString.length());
     
 
       //concat those strings into a larger string
-    automobileStatus = "Miles = " + odmtr +     " " + 
-                       "Fuel = "  + fuelLevel + " " +
-                       "Efficiency = " + effo; 
+    automobileStatus = "Miles = " + odmtrToString +     " " + 
+                       "Fuel = "  + fuelToString +  " " +
+                       "Efficiency = " + effoToString; 
 
     return automobileStatus;
 }
@@ -69,6 +69,6 @@ automobileType::automobileType(){
 }
 
 //constructor that takes params 
-automobileType::automobileType(float odmtr, float fuelLevel, float effo){
-  setProperties(odmtr, fuelLevel, effo);
+automobileType::automobileType(float odmtrToSet, float fuelToSet, float effoToSet){
+  setProperties(odmtrToSet, fuelToSet, effoToSet);
 }
