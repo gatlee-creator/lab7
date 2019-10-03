@@ -33,6 +33,7 @@ int main()
     cout << "drive 450 miles: " << endl;
     car2.drive(450);
     cout << car2.getInfoString() << endl;
+    cout << "reset odemeter back to 2500" << endl;
     car2.setProperties(2500, 19.2, 13.2);
     cout << car2.getInfoString() << endl;
 

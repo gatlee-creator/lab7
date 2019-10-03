@@ -21,14 +21,11 @@ string automobileType::getInfoString() const{
     int pos; 
 
       //convert int members to strings
-    odmtr = to_string(odemeter);
+    odmtr = to_string((int)odemeter);
     fuelLevel = to_string(fuel); 
     effo = to_string(efficiency);
 
-    //now we want to modify each strings length
-    pos = odmtr.find_first_of(".");
-    odmtr = odmtr.erase(pos, odmtr.length());
-
+    //now we want to modify strings length to show 2 decimal places
     pos = fuelLevel.find_first_of(".");
     fuelLevel = fuelLevel.erase(pos + 3, fuelLevel.length()); //not using this correct
 
@@ -71,6 +68,7 @@ automobileType::automobileType(){
   efficiency = 0;
 }
 
+//constructor that takes params 
 automobileType::automobileType(float odmtr, float fuelLevel, float effo){
   setProperties(odmtr, fuelLevel, effo);
 }
